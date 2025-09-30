@@ -1,0 +1,50 @@
+# Format Output 3D
+
+{
+  "poses_3d": [
+    [  // Person 0
+      [  // Frame 0
+        [x, y, z], [x, y, z], ...  // 17 joints in 3D
+      ],
+      [  // Frame 1
+        [x, y, z], [x, y, z], ...
+      ]
+    ],
+    [  // Person 1
+      // Similar structure
+    ]
+  ],
+  "metadata": {
+    "source_file": "video_poses_2d.json",
+    "processing_info": {
+      "timestamp": "2024-01-15T10:30:45",
+      "processing_time_seconds": 45.67,
+      "estimator_settings": {
+        "min_frames_threshold": 10,
+        "confidence_threshold": 0.1,
+        "min_valid_keypoints": 5
+      }
+    },
+    "model_info": {
+      "architecture": [3, 3, 3, 3, 3],
+      "receptive_field": 243,
+      "total_parameters": 4177937,
+      "device": "cuda:0"
+    },
+    "processing_stats": [
+      {
+        "person_id": 0,
+        "status": "success",
+        "input_frames": 300,
+        "output_frames": 285,
+        "quality_score": 0.89
+      }
+    ],
+    "output_format": {
+      "coordinate_system": "human36m",
+      "units": "millimeters",
+      "joint_names": ["hip", "right_hip", ...],
+      "skeleton_connections": [[0,1], [1,2], ...]
+    }
+  }
+}

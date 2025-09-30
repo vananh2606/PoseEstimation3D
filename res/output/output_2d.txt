@@ -1,0 +1,41 @@
+# Format Output 2D
+
+{
+  "poses": [  // Frame-by-frame poses
+    [  // Frame 0
+      [  // Person 0
+        [x, y, conf], [x, y, conf], ...  // 17 COCO keypoints
+      ],
+      [  // Person 1
+        [x, y, conf], [x, y, conf], ...
+      ]
+    ],
+    [  // Frame 1
+      // ...
+    ]
+  ],
+  "video_info": {
+    "source_video": "input.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "total_frames": 300,
+    "frame_step": 1
+  },
+  "detection_settings": {
+    "person_conf_threshold": 0.2,
+    "keypoint_conf_threshold": 0.15,
+    "max_people_per_frame": 10,
+    "model": "yolo11n-pose.pt"
+  },
+  "data_format": {
+    "keypoint_format": "COCO_17",
+    "coordinate_format": "pixel_coordinates",
+    "keypoint_names": [
+      "nose", "left_eye", "right_eye", "left_ear", "right_ear",
+      "left_shoulder", "right_shoulder", "left_elbow", "right_elbow",
+      "left_wrist", "right_wrist", "left_hip", "right_hip",
+      "left_knee", "right_knee", "left_ankle", "right_ankle"
+    ]
+  }
+}
